@@ -10,7 +10,7 @@ public class MoveBird : MonoBehaviour
     Rigidbody2D rigidbody2d;
     float jumpPower = 300;
 
-    static float initMoveSpeed = 15f;
+    static float initMoveSpeed = 5000f;
     float moveSpeed = initMoveSpeed;
     float gravitySpeed = 1f;
 
@@ -44,7 +44,7 @@ public class MoveBird : MonoBehaviour
         }
 
         // on deplace l'oiseau avec le rigidbody vers la droite
-        rigidbody2d.AddForce(new Vector2(1,0) * moveSpeed);
+        rigidbody2d.AddForce(new Vector2(1,0) * (moveSpeed * Time.deltaTime));
 
         rigidbody2d.AddForce(new Vector2(0, -1) * gravitySpeed);
 
